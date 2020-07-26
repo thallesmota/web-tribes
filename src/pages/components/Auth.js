@@ -30,14 +30,14 @@ export class Auth extends Component {
       <>
         <Logo width={"200px"} src={logo} max-width={"700px"} alt="Tribes" />
         <form>
-          <h1>EMAIL</h1>
+          <h1 align="left">EMAIL</h1>
           <input
             type="email"
             onChange={this.handleEmail}
             value={this.state.email}
             placeholder="E-email"
           />
-          <h1>SENHA</h1>
+          <h1 align="left">SENHA</h1>
           <input
             type="password"
             placeholder="Senha"
@@ -45,7 +45,7 @@ export class Auth extends Component {
             value={this.state.password}
           />
           <button type="submit">
-            <h1>Login</h1>
+            <h1 textAlign="center">Login</h1>
           </button>
           {
             <Link to="">

@@ -53,6 +53,11 @@ export const Content = styled.div`
     padding: 8 15px;
     color: #fff;
     margin: 0 0 10px;
+    padding-left: 15px;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
   }
 
   button {
@@ -73,16 +78,18 @@ export const Content = styled.div`
   a {
     color: #fff;
     margin-top: 15px;
-    font-size: 16px;
+    font-size: 13px;
     opacity: 0.8;
     text-decoration: none;
-
+    font-weight: lighter;
+    letter-spacing: 0.5px;
     &:hover {
       opacity: 1;
     }
   }
 
   h1 {
+    text-align: ${(props) => `${props.align}`};
     height: 18px;
     font-size: 12px;
     line-height: 10px;
