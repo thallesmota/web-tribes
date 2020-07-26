@@ -2,6 +2,13 @@ import React, { Component } from "react";
 import { Logo } from "../Login/styles";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
+import * as Yup from "yup";
+import { Redirect } from "react-router";
+
+const schema = Yup.object().shape({
+  email: Yup.string().email("Email inválido!").required("Email obrigatório!"),
+  password: Yup.string().required("Senha obrigatória!"),
+});
 
 export class Auth extends Component {
   constructor(props) {
@@ -18,18 +25,21 @@ export class Auth extends Component {
   };
 
   handlePassword = (event) => {
+    event.preventDefault();
     this.setState({
       password: event.target.value,
     });
   };
 
-  render() {
-    console.log("teste inputs", this.state.email, this.state.password);
+  login = () => {
+    return <Redirect to="/feed" />;
+  };
 
+  render() {
     return (
       <>
         <Logo width={"200px"} src={logo} max-width={"700px"} alt="Tribes" />
-        <form>
+        <form schema={schema}>
           <h1 align="left">EMAIL</h1>
           <input
             type="email"
@@ -44,7 +54,7 @@ export class Auth extends Component {
             onChange={this.handlePassword}
             value={this.state.password}
           />
-          <button type="submit">
+          <button onClick={this.login}>
             <h1 textAlign="center">Login</h1>
           </button>
           {

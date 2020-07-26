@@ -1,16 +1,15 @@
- import { BrowserRouter, Switch, Route} from 'react-router-dom';
- import React from 'react'
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import React from "react";
 
-import Login from './pages/Login/Login'
-import Feed from './pages/Feed/Feed'
+import Login from "./pages/Login/Login";
+import Profile from "./pages/Profile/Profile";
 
-
-export default function Routes(){
-  return(
+export default function Routes() {
+  return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={Login} />
-        <Route path="/feed" component={Feed} />
+        <Route path="/" exact component={Login} />
+        <Route path="/profile" component={Profile} />
       </Switch>
     </BrowserRouter>
   );
