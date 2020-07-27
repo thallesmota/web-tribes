@@ -1,0 +1,22 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "login": "andre@gmail.com",
+      "password": "1234",
+      "name": "André Silva"
+    },
+    {
+      "id": 2,
+      "login": "thalles@gmail.com",
+      "password": "1234",
+      "name": "Thalles Mota"
+    },
+    {
+      "id": 3,
+      "login": "mota@gmail.com",
+      "password": "1234",
+      "name": "Mota Thalles"
+    }
+  ]
+}

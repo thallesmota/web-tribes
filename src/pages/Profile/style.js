@@ -22,8 +22,8 @@ export const Wrapper = styled.div`
 `;
 
 export const BaseTopic = styled.div`
-  height: 60px;
-  width: 450px;
+  height: 50px;
+  width: 400px;
   border-radius: 5px;
   background-color: #47484c;
   margin-top: 25px;
@@ -54,20 +54,3 @@ export const TitleProfile = styled.h1`
 export const Row = styled.div`
   margin-top: ${(props) => `${props.marginTop}`};
 `;
-
-/* export const ContainerHeader = styled.div`
-  position: relative;
-  text-align: center;
-  height: 75px;
-  width: 100%;
-
-  margin: 0 0 30px;
-  background: linear-gradient(
-    118.74deg,
-    #e57728 -8.84%,
-    #e5a858 49.4%,
-    #84c167 106.44%
-  );
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-`;
- */

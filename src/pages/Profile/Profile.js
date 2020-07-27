@@ -7,7 +7,7 @@ export class Profile extends Component {
     return (
       <Wrapper>
         <Content>
-          <PersonalProfile user="André Silva"></PersonalProfile>
+          <PersonalProfile></PersonalProfile>
         </Content>
       </Wrapper>
     );

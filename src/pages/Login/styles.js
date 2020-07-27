@@ -69,7 +69,7 @@ export const Content = styled.div`
     border: 0;
     border-radius: 4px;
     font-size: 16px;
-
+    cursor: pointer;
     &:hover {
       background: ${darken(0.07, "#e57728")};
     }

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Wrapper, Content } from "./styles";
-import { Auth } from "../components/Auth";
 
 export class Login extends Component {
   constructor(props) {
@@ -10,10 +9,7 @@ export class Login extends Component {
   render() {
     return (
       <Wrapper>
-        {" "}
-        <Content>
-          <Auth />
-        </Content>
+        <Content>Teste</Content>
       </Wrapper>
     );
   }

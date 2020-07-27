@@ -1,17 +1,13 @@
 import React, { Component } from "react";
 import PersonalProfilePhoto from "react-rounded-image";
 import Photo from "../../assets/andre.jpg";
-import { Wrapper, TitleProfile, Row } from "../Profile/style";
+import { Wrapper, TitleProfile, Row, Topics } from "../Profile/style";
 import Topic from "../components/Topic";
 
 export class PersonalProfile extends Component {
   render() {
     return (
       <Wrapper>
-        {" "}
-        {/*         <ContainerHeader>
-          <TitleProfile fontsize="20px">{this.props.user}</TitleProfile>
-        </ContainerHeader> */}
         <Row marginTop={"50px"}>
           {" "}
           <PersonalProfilePhoto
@@ -30,6 +26,15 @@ export class PersonalProfile extends Component {
         </Row>
         <Row>
           <Topic text="#Vida Noturna" />
+        </Row>
+        <Row>
+          <Topic text="#Estudos" />
+        </Row>{" "}
+        <Row>
+          <Topic text="#Natureza" />
+        </Row>
+        <Row>
+          <Topic text="#Viagens" />
         </Row>
       </Wrapper>
     );

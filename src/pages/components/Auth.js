@@ -3,11 +3,12 @@ import { Logo } from "../Login/styles";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
-import { Redirect } from "react-router";
+import { useDispatch } from "react-redux";
+import { signInRequest } from "../../store/modules/auth/actions";
 
 const schema = Yup.object().shape({
-  email: Yup.string().email("Email inválido!").required("Email obrigatório!"),
-  password: Yup.string().required("Senha obrigatória!"),
+  /*   email: Yup.string().email("Email inválido!").required("Email obrigatório!"),
+  password: Yup.string().required("Senha obrigatória!"), */
 });
 
 export class Auth extends Component {
@@ -16,6 +17,7 @@ export class Auth extends Component {
     this.state = { email: "", password: "" };
     this.handleEmail = this.handleEmail.bind(this);
     this.handlePassword = this.handlePassword.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleEmail = (event) => {
@@ -31,15 +33,22 @@ export class Auth extends Component {
     });
   };
 
-  login = () => {
-    return <Redirect to="/feed" />;
+  handleSubmit = (email, password) => {
+    const dispatch = useDispatch();
+
+    dispatch(signInRequest(email, password));
   };
 
   render() {
     return (
       <>
         <Logo width={"200px"} src={logo} max-width={"700px"} alt="Tribes" />
-        <form schema={schema}>
+        <form
+          schema={schema}
+          onSubmit={() =>
+            this.handleSubmit(this.state.email, this.state.password)
+          }
+        >
           <h1 align="left">EMAIL</h1>
           <input
             type="email"
@@ -54,14 +63,16 @@ export class Auth extends Component {
             onChange={this.handlePassword}
             value={this.state.password}
           />
-          <button onClick={this.login}>
-            <h1 textAlign="center">Login</h1>
-          </button>
-          {
-            <Link to="">
-              Ainda não tem uma conta? <u>Cadastre-se!</u>
+
+          <button type="submit">
+            <Link to="/profile">
+              <h1 textAlign="center">Login</h1>
             </Link>
-          }
+          </button>
+
+          <Link to="">
+            Ainda não tem uma conta? <u>Cadastre-se!</u>
+          </Link>
         </form>
       </>
     );
